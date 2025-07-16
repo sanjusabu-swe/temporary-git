@@ -1,0 +1,53 @@
+    ================================================================GIT AND GITHUB TUTORIAL=======================================================================
+
+#  INSTALL GIT
+sudo apt install git
+
+#  GLOBAL CONFIGURATION
+git config --global user.name "sanjusabu-swe"
+git config --global user.email "sanjusabu.swe@gmail.com"
+git config --global init.defaultBranch main              # default branch for new repos
+git config --global core.editor "code --wait"            # VS Code as editor (with --wait)
+# or use
+git config --global core.editor "vim"                    # for Vim
+
+#  STARTING A NEW REPO
+git init                                                 # initialize a new local repo
+
+#  ADDING FILES TO STAGING
+git add .                                                # add everything in the current folder
+git add *.ext                                            # add files by extension (e.g., *.sh)
+git add filename                                         # add single file
+
+#  UNSTAGING FILES
+git reset                                                # unstage everything
+git reset *.ext                                          # unstage files by extension
+git reset filename                                       # unstage specific file
+git reset --hard                                         # remove changes from both staging + working dir
+
+#  COMMITTING CHANGES
+git commit                                               # open editor to write commit message
+git commit -m "msg"                                      # commit with inline message
+git commit -am "msg"                                     # stage & commit all modified/deleted tracked files
+
+#  VIEWING HISTORY
+git log                                                  # full commit history
+git log --oneline                                        # compact view (1-line per commit)
+git log --graph                                          # graph view (visualizes branches)
+git log --reverse                                        # shows earliest commits first
+
+#  CHECKOUT / SWITCHING COMMITS
+git checkout <commit_id>                                 # move to older commit (detached HEAD)
+git checkout main                                        # return to main branch
+
+#  BRANCH MANAGEMENT
+git branch -m main                                       # rename current branch to main (e.g., master → main)
+
+#  REMOTE CONFIGURATION
+git remote add origin <remote_repo_link>                 # connect to GitHub or other remote
+git remote -v                                            # show all remotes and their URLs
+
+#  PUSHING CHANGES
+git push -u origin main                                  # first push, sets upstream
+git push                                                 # subsequent pushes (no need for -u or branch)
+
